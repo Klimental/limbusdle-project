@@ -1,4 +1,4 @@
-// Database of identities (Mock Data for Week 2)
+// Database of identities
 const identities = [
     { name: "W Corp. L3 Cleanup Agent Yi Sang", sinner: "Yi Sang", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
     { name: "N Corp. The One Who Grips Faust", sinner: "Faust", rarity: "000", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Pierce", s3: "Blunt", def: "Guard" },
@@ -6,14 +6,14 @@ const identities = [
     { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", rarity: "000", season: "Season 2", faction: "Dieci Assoc.", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" }
 ];
 
-// Random pick every time the page loads
+// Random pick every time the page loads (Session-based)
 const targetIdentity = identities[Math.floor(Math.random() * identities.length)];
-console.log("Target for this session:", targetIdentity.name); // Check in Console (F12)
+console.log("Target for this session:", targetIdentity.name); 
 
 const searchInput = document.getElementById('sinner-search');
 const resultsDiv = document.getElementById('search-results');
 
-// 1. Search Logic (Filtering by Sinner or Faction)
+// 1. Search Logic: Filtering by Sinner, Faction, or Full Name
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
     resultsDiv.innerHTML = '';
@@ -28,7 +28,7 @@ searchInput.addEventListener('input', () => {
         filtered.forEach(id => {
             const item = document.createElement('div');
             item.className = 'dropdown-item';
-            item.innerText = id.name;
+            item.innerText = `${id.name} (${id.faction})`;
             item.onclick = () => {
                 addAttempt(id);
                 searchInput.value = '';
@@ -39,7 +39,7 @@ searchInput.addEventListener('input', () => {
     }
 });
 
-// 2. Comparison Logic
+// 2. Comparison Logic with Color feedback 
 function addAttempt(guess) {
     const list = document.getElementById('attempts-list');
     const row = document.createElement('tr');
@@ -57,5 +57,5 @@ function addAttempt(guess) {
         <td class="${check(guess.def, targetIdentity.def)}">${guess.def}</td>
     `;
 
-    list.prepend(row);
+    list.prepend(row); // Newest attempts appear on top
 }
