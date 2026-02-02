@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limbusdle - Mirror Interface</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>[ MIRROR INTERFACE ]</h1>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <input type="text" id="sinner-search" placeholder="Name Sinner or his Identity..." autocomplete="off">
+                <div id="search-results" class="dropdown"></div>
+            </section>
+
+            <section class="results-section">
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Sinner</th>
+                            <th>Rarity</th>
+                            <th>Season</th>
+                            <th>Faction</th>
+                            <th>Damage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="attempts-list">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+
+        <nav>
+            <a href="dossier.html">Identity Dossier</a> | 
+            <a href="rules.html">Extraction Rules</a>
+        </nav>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
