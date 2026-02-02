@@ -3,7 +3,17 @@ const identities = [
     { name: "W Corp. L3 Cleanup Agent Yi Sang", sinner: "Yi Sang", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
     { name: "N Corp. The One Who Grips Faust", sinner: "Faust", rarity: "000", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Pierce", s3: "Blunt", def: "Guard" },
     { name: "R Corp. 4th Pack Rabbit Heathcliff", sinner: "Heathcliff", rarity: "000", season: "Season 1", faction: "R Corp", s1: "Pierce", s2: "Pierce", s3: "Pierce", def: "Evade" },
-    { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", rarity: "000", season: "Season 2", faction: "Dieci Assoc.", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" }
+    { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", rarity: "000", season: "Season 2", faction: "Dieci Assoc.", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" },
+    { name: "Seven Assoc. Section 6 Yi Sang", sinner: "Yi Sang", rarity: "00", season: "Season 1", faction: "Seven Assoc.", s1: "Pierce", s2: "Slash", s3: "Pierce", def: "Guard" },
+    { name: "W Corp. L2 Cleanup Agent Faust", sinner: "Faust", rarity: "00", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Blunt", def: "Guard" },
+    { name: "LCB Sinner Sinclair", sinner: "Sinclair", rarity: "0", season: "Base", faction: "LCB", s1: "Slash", s2: "Slash", s3: "Slash", def: "Guard" },
+    { name: "N Corp. Mittelhammer Don Quixote", sinner: "Don Quixote", rarity: "00", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Blunt", s3: "Pierce", def: "Guard" },
+    { name: "W Corp. L3 Cleanup Agent Don Quixote", sinner: "Don Quixote", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Pierce", def: "Evade" },
+    { name: "Kurokumo Clan Wakashu Hong Lu", sinner: "Hong Lu", rarity: "00", season: "Season 1", faction: "Kurokumo Clan", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
+    { name: "Tingtang Gangleader Hong Lu", sinner: "Hong Lu", rarity: "000", season: "Season 1", faction: "Tingtang Gang", s1: "Slash", s2: "Pierce", s3: "Slash", def: "Evade" },
+    { name: "Shi Assoc. Section 5 Ishmael", sinner: "Ishmael", rarity: "00", season: "Season 1", faction: "Shi Assoc.", s1: "Slash", s2: "Slash", s3: "Slash", def: "Counter" },
+    { name: "R Corp. 4th Pack Reindeer Ishmael", sinner: "Ishmael", rarity: "000", season: "Season 1", faction: "R Corp", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" },
+    { name: "Lobotomy E.G.O Sloshing Rodion", sinner: "Rodion", rarity: "00", season: "Season 2", faction: "Lobotomy Corp", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" }
 ];
 
 // Random pick every time the page loads (Session-based)
