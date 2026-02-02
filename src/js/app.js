@@ -6,8 +6,9 @@ const identities = [
     { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", rarity: "000", season: "Season 2", faction: "Dieci Assoc.", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" }
 ];
 
-// Random identity of the day
+// Random pick every time the page loads
 const targetIdentity = identities[Math.floor(Math.random() * identities.length)];
+console.log("Target for this session:", targetIdentity.name); // Check in Console (F12)
 
 const searchInput = document.getElementById('sinner-search');
 const resultsDiv = document.getElementById('search-results');
