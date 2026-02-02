@@ -54,10 +54,16 @@ searchInput.addEventListener('input', () => {
 });
 
 // 2. Comparison Logic with Color feedback 
+let gameOver = false;
+
 function addAttempt(guess) {
+    if (gameOver) return; 
+
     const list = document.getElementById('attempts-list');
     const row = document.createElement('tr');
-    const check = (v1, v2) => v1 === v2 ? 'correct' : 'wrong';
+    row.classList.add('fade-in'); 
+
+    const check = (val1, val2) => val1 === val2 ? 'correct' : 'wrong';
 
     row.innerHTML = `
         <td class="${check(guess.sinner, targetIdentity.sinner)}">
@@ -73,5 +79,46 @@ function addAttempt(guess) {
         <td class="${check(guess.def, targetIdentity.def)}">${guess.def}</td>
     `;
 
-    list.prepend(row); // Newest attempts appear on top
+    list.prepend(row);
+
+    if (guess.name === targetIdentity.name) {
+        showWinScreen();
+    }
+}
+
+function showWinScreen() {
+    gameOver = true;
+    const modal = document.getElementById('win-modal');
+    const info = document.getElementById('winner-info');
+
+    info.innerHTML = `
+        <img src="${targetIdentity.image}" class="win-image">
+        <h3>You guessed: ${targetIdentity.name}</h3>
+    `;
+
+    modal.style.display = "flex";
+    
+    const duration = 3 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+        confetti({
+            particleCount: 3,
+            angle: 60,
+            spread: 55,
+            origin: { x: 0 },
+            colors: ['#b71c1c', '#ffffff']
+        });
+        confetti({
+            particleCount: 3,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            colors: ['#b71c1c', '#ffffff']
+        });
+
+        if (Date.now() < end) {
+            requestAnimationFrame(frame);
+        }
+    }());
 }
