@@ -1,19 +1,19 @@
 // Database of identities
 const identities = [
-    { name: "W Corp. L3 Cleanup Agent Yi Sang", sinner: "Yi Sang", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
-    { name: "N Corp. The One Who Grips Faust", sinner: "Faust", rarity: "000", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Pierce", s3: "Blunt", def: "Guard" },
-    { name: "R Corp. 4th Pack Rabbit Heathcliff", sinner: "Heathcliff", rarity: "000", season: "Season 1", faction: "R Corp", s1: "Pierce", s2: "Pierce", s3: "Pierce", def: "Evade" },
-    { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", rarity: "000", season: "Season 2", faction: "Dieci Assoc.", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" },
-    { name: "Seven Assoc. Section 6 Yi Sang", sinner: "Yi Sang", rarity: "00", season: "Season 1", faction: "Seven Assoc.", s1: "Pierce", s2: "Slash", s3: "Pierce", def: "Guard" },
-    { name: "W Corp. L2 Cleanup Agent Faust", sinner: "Faust", rarity: "00", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Blunt", def: "Guard" },
-    { name: "LCB Sinner Sinclair", sinner: "Sinclair", rarity: "0", season: "Base", faction: "LCB", s1: "Slash", s2: "Slash", s3: "Slash", def: "Guard" },
-    { name: "N Corp. Mittelhammer Don Quixote", sinner: "Don Quixote", rarity: "00", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Blunt", s3: "Pierce", def: "Guard" },
-    { name: "W Corp. L3 Cleanup Agent Don Quixote", sinner: "Don Quixote", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Pierce", def: "Evade" },
-    { name: "Kurokumo Clan Wakashu Hong Lu", sinner: "Hong Lu", rarity: "00", season: "Season 1", faction: "Kurokumo Clan", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
-    { name: "Tingtang Gangleader Hong Lu", sinner: "Hong Lu", rarity: "000", season: "Season 1", faction: "Tingtang Gang", s1: "Slash", s2: "Pierce", s3: "Slash", def: "Evade" },
-    { name: "Shi Assoc. Section 5 Ishmael", sinner: "Ishmael", rarity: "00", season: "Season 1", faction: "Shi Assoc.", s1: "Slash", s2: "Slash", s3: "Slash", def: "Counter" },
-    { name: "R Corp. 4th Pack Reindeer Ishmael", sinner: "Ishmael", rarity: "000", season: "Season 1", faction: "R Corp", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" },
-    { name: "Lobotomy E.G.O Sloshing Rodion", sinner: "Rodion", rarity: "00", season: "Season 2", faction: "Lobotomy Corp", s1: "Blunt", s2: "Blunt", s3: "Blunt", def: "Guard" }
+    { name: "W Corp. L3 Cleanup Agent Yi Sang", sinner: "Yi Sang", image: "img/yi_sang_w.png", rarity: "000", season: "Season 1", faction: "W Corp", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade" },
+    { name: "N Corp. The One Who Grips Faust", sinner: "Faust", image: "img/faust_n.png", rarity: "000", season: "Season 2", faction: "N Corp", s1: "Blunt", s2: "Pierce", s3: "Blunt", def: "Guard" },
+    { name: "R Corp. 4th Pack Rabbit Heathcliff", sinner: "Heathcliff", image: "img/heathcliff_r.png", rarity: "000", season: "Season 1", faction: "R Corp", s1: "Pierce", s2: "Pierce", s3: "Pierce", def: "Evade" },
+    { name: "Dieci Assoc. South Section 4 Rodion", sinner: "Rodion", image:"img/rodion_d.png" ,rarity:"000" , season:"Season 2" , faction:"Dieci Assoc.",s1:"Blunt" ,s2:"Blunt" ,s3:"Blunt" ,def:"Guard"},
+    { name: "Seven Assoc. Section 6 Yi Sang", sinner: "Yi Sang", image:"img/yi_sang_7.png" ,rarity:"00" , season:"Season 1" , faction:"Seven Assoc.",s1:"Pierce" ,s2:"Slash" ,s3:"Pierce" ,def:"Guard"},
+    { name: "W Corp. L2 Cleanup Agent Faust", sinner: "Faust", image:"img/faust_w.png" ,rarity:"00" , season:"Season 1" , faction:"W Corp.",s1:"Slash" ,s2:"Slash" ,s3:"Blunt" ,def:"Guard"},
+    { name: "LCB Sinner Sinclair", sinner: "Sinclair", image:"img/sinclair_lcb.png" ,rarity:"0" , season:"Base" , faction:"LCB",s1:"Slash" ,s2:"Slash" ,s3:"Slash" ,def:"Guard"},
+    { name: "N Corp. Mittelhammer Don Quixote", sinner: "Don Quixote", image:"img/don_quixote_n.png" ,rarity:"00" , season:"Season 2" , faction:"N Corp",s1:"Blunt" ,s2:"Blunt" ,s3:"Pierce" ,def:"Guard"},
+    { name: "W Corp. L3 Cleanup Agent Don Quixote", sinner: "Don Quixote", image:"img/don_quixote_w.png" ,rarity:"000" , season:"Season 1" , faction:"W Corp",s1:"Slash" ,s2:"Slash" ,s3:"Pierce" ,def:"Evade"},
+    { name: "Kurokumo Clan Wakashu Hong Lu", sinner: "Hong Lu", image: "img/hong_lu_k.png", rarity: "00", season: "Season 1", faction: "Kurokumo Clan", s1: "Slash", s2: "Slash", s3: "Slash", def: "Evade"},
+    { name: "Tingtang Gangleader Hong Lu", sinner: "Hong Lu", image: "img/hong_lu_t.png", rarity: "000", season: "Season 1", faction: "Tingtang Gang", s1: "Slash", s2: "Pierce", s3: "Slash", def: "Evade"},
+    { name: "Shi Assoc. Section 5 Ishmael", sinner: "Ishmael", image:"img/ishmael_s.png" ,rarity:"00" , season:"Season 1" , faction:"Shi Assoc.",s1:"Slash" ,s2:"Slash" ,s3:"Slash" ,def:"Counter"},
+    { name: "R Corp. 4th Pack Reindeer Ishmael", sinner: "Ishmael", image:`img/ishmael_r.png` ,rarity:`000` , season:`Season 1` , faction:`R Corp`,s1:`Blunt` ,s2:`Blunt` ,s3:`Blunt` ,def:`Guard`},
+    { name: "Lobotomy E.G.O Sloshing Rodion", sinner: "Rodion", image:`img/rodion_l.png` ,rarity:`00` , season:`Season 2` , faction:`Lobotomy Corp`,s1:`Blunt` ,s2:`Blunt` ,s3:`Blunt` ,def:`Guard`}
 ];
 
 // Random pick every time the page loads (Session-based)
@@ -38,14 +38,18 @@ searchInput.addEventListener('input', () => {
         filtered.forEach(id => {
             const item = document.createElement('div');
             item.className = 'dropdown-item';
-            item.innerText = `${id.name} (${id.faction})`;
-            item.onclick = () => {
-                addAttempt(id);
-                searchInput.value = '';
-                resultsDiv.innerHTML = '';
-            };
-            resultsDiv.appendChild(item);
-        });
+            item.innerHTML = `
+                    <img src="${id.image}" class="search-icon">
+                    <span>${id.name}</span>
+                `;
+                
+                item.onclick = () => {
+                    addAttempt(id);
+                    searchInput.value = '';
+                    resultsDiv.innerHTML = '';
+                };
+                resultsDiv.appendChild(item);
+            });
     }
 });
 
@@ -53,11 +57,13 @@ searchInput.addEventListener('input', () => {
 function addAttempt(guess) {
     const list = document.getElementById('attempts-list');
     const row = document.createElement('tr');
-
-    const check = (val1, val2) => val1 === val2 ? 'correct' : 'wrong';
+    const check = (v1, v2) => v1 === v2 ? 'correct' : 'wrong';
 
     row.innerHTML = `
-        <td class="${check(guess.sinner, targetIdentity.sinner)}">${guess.sinner}</td>
+        <td class="${check(guess.sinner, targetIdentity.sinner)}">
+            <img src="${guess.image}" class="table-icon">
+            <br>${guess.sinner}
+        </td>
         <td class="${check(guess.rarity, targetIdentity.rarity)}">${guess.rarity}</td>
         <td class="${check(guess.season, targetIdentity.season)}">${guess.season}</td>
         <td class="${check(guess.faction, targetIdentity.faction)}">${guess.faction}</td>
