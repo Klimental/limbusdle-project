@@ -16,14 +16,12 @@ const identities = [
     { name: "Lobotomy E.G.O Sloshing Rodion", sinner: "Rodion", image:`img/rodion_l.png` ,rarity:`00` , season:`Season 2` , faction:`Lobotomy Corp`,s1:`Blunt` ,s2:`Blunt` ,s3:`Blunt` ,def:`Guard`}
 ];
 
-// Random pick every time the page loads (Session-based)
 const targetIdentity = identities[Math.floor(Math.random() * identities.length)];
 console.log("Target for this session:", targetIdentity.name); 
 
 const searchInput = document.getElementById('sinner-search');
 const resultsDiv = document.getElementById('search-results');
 
-// 1. Search Logic: Filtering by Sinner, Faction, or Full Name
 searchInput.addEventListener('input', () => {
     const query = searchInput.value.toLowerCase();
     resultsDiv.innerHTML = '';
@@ -53,22 +51,25 @@ searchInput.addEventListener('input', () => {
     }
 });
 
-// 2. Comparison Logic with Color feedback 
+
+let attemptsCount = 0;
 let gameOver = false;
 
 function addAttempt(guess) {
-    if (gameOver) return; 
+    if (gameOver) return;
+
+    attemptsCount++;
+    document.getElementById('count-number').innerText = attemptsCount;
 
     const list = document.getElementById('attempts-list');
     const row = document.createElement('tr');
-    row.classList.add('fade-in'); 
+    row.classList.add('fade-in');
 
     const check = (val1, val2) => val1 === val2 ? 'correct' : 'wrong';
 
     row.innerHTML = `
         <td class="${check(guess.sinner, targetIdentity.sinner)}">
-            <img src="${guess.image}" class="table-icon">
-            <br>${guess.sinner}
+            <img src="${guess.image}" class="table-icon"><br>${guess.sinner}
         </td>
         <td class="${check(guess.rarity, targetIdentity.rarity)}">${guess.rarity}</td>
         <td class="${check(guess.season, targetIdentity.season)}">${guess.season}</td>
@@ -93,32 +94,17 @@ function showWinScreen() {
 
     info.innerHTML = `
         <img src="${targetIdentity.image}" class="win-image">
-        <h3>You guessed: ${targetIdentity.name}</h3>
+        <h3>${targetIdentity.name}</h3>
+        <p>You guessed it in <strong>${attemptsCount}</strong> attempts!</p>
     `;
 
     modal.style.display = "flex";
     
-    const duration = 3 * 1000;
-    const end = Date.now() + duration;
+    if (typeof confetti === 'function') {
+        confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 }, colors: ['#b71c1c', '#ffffff'] });
+    }
+}
 
-    (function frame() {
-        confetti({
-            particleCount: 3,
-            angle: 60,
-            spread: 55,
-            origin: { x: 0 },
-            colors: ['#b71c1c', '#ffffff']
-        });
-        confetti({
-            particleCount: 3,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            colors: ['#b71c1c', '#ffffff']
-        });
-
-        if (Date.now() < end) {
-            requestAnimationFrame(frame);
-        }
-    }());
+function closeModal() {
+    document.getElementById('win-modal').style.display = "none";
 }

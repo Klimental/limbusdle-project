@@ -19,6 +19,10 @@
                 <div id="search-results" class="dropdown"></div>
             </div>
 
+            <div class="attempts-counter">
+                Attempts: <span id="count-number">0</span>
+            </div>
+
             <section class="results-table-container">
                 <table>
                     <thead>
@@ -41,10 +45,11 @@
     </div>
     <div id="win-modal" class="modal">
         <div class="modal-content">
-            <h2>GG WP!</h2>
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>SUCCESS</h2>
             <div id="winner-info">
                 </div>
-            <button onclick="location.reload()">Play Again</button>
+            <button class="play-again-btn" onclick="location.reload()">Play Again</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
