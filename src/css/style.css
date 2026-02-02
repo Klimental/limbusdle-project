@@ -1,44 +1,70 @@
 body {
     background-color: #0b0b0b;
-    color: #d1d1d1;
-    font-family: 'Courier New', Courier, monospace; /* Стиль терміналу */
-    margin: 0;
+    color: #e0e0e0;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
+    margin: 0;
 }
 
 .container {
-    width: 90%;
-    max-width: 800px;
+    width: 95%;
+    max-width: 1000px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 40px;
 }
 
-h1 {
-    color: #b71c1c; /* Червоний акцент Limbus */
-    letter-spacing: 5px;
+h1 { color: #b71c1c; letter-spacing: 4px; }
+
+/* Search and Dropdown Styles */
+.search-wrapper {
+    position: relative;
+    margin-bottom: 30px;
 }
 
-input {
+#sinner-search {
     width: 100%;
     padding: 15px;
-    background: #1a1a1a;
-    border: 1px solid #b71c1c;
+    background: #151515;
+    border: 2px solid #b71c1c;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    box-sizing: border-box;
 }
 
+.dropdown {
+    position: absolute;
+    width: 100%;
+    background: #1a1a1a;
+    border: 1px solid #444;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 100;
+    text-align: left;
+}
+
+.dropdown-item {
+    padding: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    transition: 0.2s;
+}
+
+.dropdown-item:hover { background: #b71c1c; color: white; }
+
+/* Table Styles */
 table {
     width: 100%;
-    margin-top: 30px;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
+    padding: 12px 8px;
     border: 1px solid #333;
-    padding: 10px;
+    font-size: 0.9rem;
 }
 
-/* Колірна логіка з твого плану */
-.correct { background-color: #2e7d32; } /* Зелений - збіг */
-.wrong { background-color: #c62828; }   /* Червоний - не збіг */
+/* Logic Colors */
+.correct { background-color: #2e7d32; color: white; } /* Green match */
+.wrong { background-color: #c62828; color: white; }   /* Red mismatch */

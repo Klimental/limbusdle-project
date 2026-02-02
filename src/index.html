@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +10,27 @@
     <div class="container">
         <header>
             <h1>[ MIRROR INTERFACE ]</h1>
+            <p>Guess the Identity of the Day</p>
         </header>
 
         <main>
-            <section class="search-section">
-                <input type="text" id="sinner-search" placeholder="Name Sinner or his Identity..." autocomplete="off">
+            <div class="search-wrapper">
+                <input type="text" id="sinner-search" placeholder="Type Sinner or Faction..." autocomplete="off">
                 <div id="search-results" class="dropdown"></div>
-            </section>
+            </div>
 
-            <section class="results-section">
-                <table id="results-table">
+            <section class="results-table-container">
+                <table>
                     <thead>
                         <tr>
                             <th>Sinner</th>
                             <th>Rarity</th>
                             <th>Season</th>
                             <th>Faction</th>
-                            <th>Skill 1 Damage Type</th>
-                            <th>Skill 2 Damage Type</th>
-                            <th>Skill 3 Damage Type</th>
-                            <th>Skill Defence Type</th>
+                            <th>Skill 1</th>
+                            <th>Skill 2</th>
+                            <th>Skill 3</th>
+                            <th>Defense</th>
                         </tr>
                     </thead>
                     <tbody id="attempts-list">
@@ -37,13 +38,7 @@
                 </table>
             </section>
         </main>
-
-        <nav>
-            <a href="dossier.html">Identity Dossier</a> | 
-            <a href="rules.html">Extraction Rules</a>
-        </nav>
     </div>
-
     <script src="js/app.js"></script>
 </body>
 </html>
