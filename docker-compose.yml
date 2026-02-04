@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  # Веб-сервер
+  limbusdle-web:
+    build: .
+    container_name: limbusdle_app
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+    restart: always
+
+  # База даних MySQL [cite: 234, 302]
+  db:
+    image: mysql:8.0
+    container_name: limbusdle_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: limbusdle
+    volumes:
+      - /sql:/docker-entrypoint-initdb.d # Ваші .sql файли запустяться автоматично [cite: 193]
