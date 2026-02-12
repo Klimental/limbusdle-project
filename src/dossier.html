@@ -2,35 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Limbusdle - Identity Dossier</title>
+    <title>Limbusdle - Dossier</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <nav>
+        <a href="index.html">Play</a>
+        <a href="rules.html">Rules</a>
+        <a href="dossier.html" class="active">Dossier</a>
+    </nav>
+
     <div class="container">
-        <h1>[ IDENTITY DOSSIER ]</h1>
-        <table style="margin-top: 20px;">
-            <thead>
-                <tr>
-                    <th>Icon</th>
-                    <th>Name</th>
-                    <th>Sinner</th>
-                    <th>Faction</th>
-                    <th>Rarity</th>
-                    <th>Skill 1</th>
-                    <th>Skill 2</th>
-                    <th>Skill 3</th>
-                    <th>Defense</th>
-                </tr>
-            </thead>
-            <tbody id="dossier-list">
-                </tbody>
-        </table>
-        <br>
-        <a href="index.html" class="play-again-btn" style="text-decoration: none;">Back to Game</a>
+        <h1>Identity Dossier</h1>
+        
+        <div class="dossier-grid" id="dossier-list">
+            </div>
     </div>
 
-    <script>
-        const dossierList = document.getElementById('dossier-list');
-    </script>
+    <script src="js/app.js"></script>
 </body>
 </html>

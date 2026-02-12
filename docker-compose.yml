@@ -16,4 +16,4 @@ services:
       MYSQL_DATABASE: limbusdle
     volumes:
       # Виправлено шлях: додано крапку для відносного шляху
-      - ./sql:/docker-entrypoint-initdb.d
+      - ./sql:/docker-entryp  oint-initdb.d

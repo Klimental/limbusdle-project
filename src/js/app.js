@@ -67,21 +67,20 @@ function addAttempt(guess) {
     const check = (val1, val2) => val1 === val2 ? 'correct' : 'wrong';
 
     row.innerHTML = `
-        <td class="${check(guess.sinner_name, targetIdentity.sinner_name)}">
-            <img src="${guess.image_path}" class="table-icon"><br>${guess.sinner_name}
-        </td>
+        <td><img src="${guess.image_path}" class="table-icon"></td>
+        <td class="${check(guess.sinner_id, targetIdentity.sinner_id)}">${guess.sinner_name}</td>
         <td class="${check(guess.rarity, targetIdentity.rarity)}">${guess.rarity}</td>
         <td class="${check(guess.season, targetIdentity.season)}">${guess.season}</td>
         <td class="${check(guess.faction, targetIdentity.faction)}">${guess.faction}</td>
         <td class="${check(guess.skill1, targetIdentity.skill1)}">${guess.skill1}</td>
-        <td class="${check(guess.skill2, targetIdentity.skill2)}">${guess.skill2}</td>
+        <td class="${check(guess.skill2, targetIdentity.skill2)}">${guess.skill3}</td>
         <td class="${check(guess.skill3, targetIdentity.skill3)}">${guess.skill3}</td>
         <td class="${check(guess.defense, targetIdentity.defense)}">${guess.defense}</td>
     `;
 
     list.prepend(row);
 
-    if (guess.name === targetIdentity.name) {
+    if (guess.id === targetIdentity.id) {
         showWinScreen();
     }
 }
@@ -101,4 +100,52 @@ function showWinScreen() {
 
 function closeModal() {
     document.getElementById('win-modal').style.display = "none";
+}
+
+function renderDossier(data) {
+    const container = document.getElementById('dossier-list');
+    if (!container) return;
+
+    container.innerHTML = '';
+
+    data.forEach(identity => {
+        const card = document.createElement('div');
+        card.className = 'dossier-card';
+        
+        card.innerHTML = `
+            <div class="card-header">
+                <img src="${identity.image_path}" alt="${identity.name}" class="dossier-img">
+            </div>
+            <div class="card-body">
+                <h3>${identity.name}</h3>
+                <p><strong>Sinner:</strong> ${identity.sinner_name}</p>
+                <p><strong>Rarity:</strong> ${identity.rarity}</p>
+                <p><strong>Faction:</strong> ${identity.faction}</p>
+                <div class="skills-preview">
+                    <span>${identity.skill1}</span>
+                    <span>${identity.skill2}</span>
+                    <span>${identity.skill3}</span>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+async function loadIdentities() {
+    try {
+        const response = await fetch('php/get_identities.php');
+        identities = await response.json();
+        
+        if (identities.length > 0) {
+            if (document.getElementById('sinner-search')) {
+                startGame();
+            }
+            if (document.getElementById('dossier-list')) {
+                renderDossier(identities);
+            }
+        }
+    } catch (error) {
+        console.error("Помилка завантаження даних:", error);
+    }
 }
