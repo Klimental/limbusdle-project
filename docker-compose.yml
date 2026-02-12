@@ -15,4 +15,4 @@ services:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: limbusdle
     volumes:
-      - ./sql:/docker-entryp  oint-initdb.d
+      - ./sql:/docker-entrypoint-initdb.d

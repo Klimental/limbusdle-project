@@ -73,7 +73,7 @@ function addAttempt(guess) {
         <td class="${check(guess.season, targetIdentity.season)}">${guess.season}</td>
         <td class="${check(guess.faction, targetIdentity.faction)}">${guess.faction}</td>
         <td class="${check(guess.skill1, targetIdentity.skill1)}">${guess.skill1}</td>
-        <td class="${check(guess.skill2, targetIdentity.skill2)}">${guess.skill3}</td>
+        <td class="${check(guess.skill2, targetIdentity.skill2)}">${guess.skill2}</td>
         <td class="${check(guess.skill3, targetIdentity.skill3)}">${guess.skill3}</td>
         <td class="${check(guess.defense, targetIdentity.defense)}">${guess.defense}</td>
     `;
