@@ -15,5 +15,4 @@ services:
       MYSQL_ROOT_PASSWORD: root_password
       MYSQL_DATABASE: limbusdle
     volumes:
-      # Виправлено шлях: додано крапку для відносного шляху
       - ./sql:/docker-entryp  oint-initdb.d
