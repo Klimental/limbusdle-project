@@ -9,15 +9,21 @@ async function loadIdentities() {
         identities = await response.json();
         
         if (identities.length > 0) {
-            startGame();
+            if (document.getElementById('sinner-search')) {
+                startGame();
+            }
+            if (document.getElementById('dossier-list')) {
+                renderDossier(identities);
+            }
         }
     } catch (error) {
         console.error("Connection to DB failed:", error);
     }
 }
+
 function startGame() {
     targetIdentity = identities[Math.floor(Math.random() * identities.length)];
-    console.log("Target for this session:", targetIdentity.name);
+    console.log("Target:", targetIdentity.name);
 }
 
 loadIdentities();
@@ -107,11 +113,9 @@ function renderDossier(data) {
     if (!container) return;
 
     container.innerHTML = '';
-
     data.forEach(identity => {
         const card = document.createElement('div');
         card.className = 'dossier-card';
-        
         card.innerHTML = `
             <div class="card-header">
                 <img src="${identity.image_path}" alt="${identity.name}" class="dossier-img">
@@ -121,31 +125,8 @@ function renderDossier(data) {
                 <p><strong>Sinner:</strong> ${identity.sinner_name}</p>
                 <p><strong>Rarity:</strong> ${identity.rarity}</p>
                 <p><strong>Faction:</strong> ${identity.faction}</p>
-                <div class="skills-preview">
-                    <span>${identity.skill1}</span>
-                    <span>${identity.skill2}</span>
-                    <span>${identity.skill3}</span>
-                </div>
             </div>
         `;
         container.appendChild(card);
     });
-}
-
-async function loadIdentities() {
-    try {
-        const response = await fetch('php/get_identities.php');
-        identities = await response.json();
-        
-        if (identities.length > 0) {
-            if (document.getElementById('sinner-search')) {
-                startGame();
-            }
-            if (document.getElementById('dossier-list')) {
-                renderDossier(identities);
-            }
-        }
-    } catch (error) {
-        console.error("Помилка завантаження даних:", error);
-    }
 }
