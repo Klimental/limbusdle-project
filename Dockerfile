@@ -1,10 +1,12 @@
-# Використовуємо легкий образ веб-сервера Nginx
-FROM nginx:alpine
+FROM php:8.2-apache
 
-# Копіюємо всі твої файли (index.html, css, js, img) у папку сервера
-COPY ./src /usr/share/nginx/html
+# Встановлюємо необхідні драйвери для підключення до MySQL
+RUN docker-php-ext-install pdo pdo_mysql
 
-# Відкриваємо 80 порт для перегляду в браузері
+# Копіюємо вміст src (разом з підпапкою php) у веб-директорію
+COPY ./src /var/www/html/
+
+# Надаємо права доступу
+RUN chown -R www-data:www-data /var/www/html
+
 EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]

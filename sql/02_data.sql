@@ -1,7 +1,16 @@
 INSERT INTO sinners (name) VALUES 
-('Yi Sang'), ('Faust'), ('Don Quixote'), ('Ryoshu'), ('Meursault'), 
-('Hong Lu'), ('Heathcliff'), ('Ishmael'), ('Rodya'), ('Sinclair'), 
-('Outis'), ('Gregor');
+('Yi Sang'), 
+('Faust'), 
+('Don Quixote'), 
+('Ryoshu'), 
+('Meursault'), 
+('Hong Lu'), 
+('Heathcliff'), 
+('Ishmael'), 
+('Rodya'), 
+('Sinclair'), 
+('Outis'), 
+('Gregor');
 
 INSERT INTO identities (sinner_id, name, rarity, season, faction, skill1, skill2, skill3, defense, image_path) VALUES 
 (1, 'W Corp. L3 Cleanup Agent', '000', 'Season 1', 'W Corp', 'Slash', 'Slash', 'Slash', 'Evade', 'img/yi_sang_w.png'),
