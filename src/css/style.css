@@ -301,3 +301,38 @@ nav a:hover {
     border-radius: 4px;
     font-size: 0.8em;
 }
+
+.skill-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; 
+}
+
+.type-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 1px rgba(0,0,0,0.5));
+}
+
+.dossier-table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.dossier-table th {
+    background-color: #eca509;
+    color: #1a1a1a;
+    position: sticky;
+    top: 0;
+}
+
+.dossier-table td {
+    background-color: #242424;
+    border: 1px solid #444;
+}
+
+.dossier-table tr:hover td {
+    background-color: #333;
+}

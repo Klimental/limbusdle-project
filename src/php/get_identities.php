@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: application/json');
 
-$host = 'db';
+$host = 'limbusdle_db';
 $db   = 'limbusdle';
 $user = 'root';
 $pass = 'root_password';
@@ -29,5 +29,5 @@ try {
 
 } catch (\PDOException $e) {
     http_response_code(500);
-    echo json_encode(["error" => "Internal Server Error"]);
+    echo json_encode(["error" => $e->getMessage()]); 
 }
