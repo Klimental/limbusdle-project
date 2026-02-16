@@ -113,16 +113,16 @@ th, td {
    ========================================== */
 
 .search-icon {
-    width: 140px;
-    height: 100px;
+    width: 24px;
+    height: 24px;
     margin-right: 10px;
     vertical-align: middle;
     border: 1px solid #b71c1c;
 }
 
 .table-icon {
-    width: 250px;
-    height: 200px;
+    width: 24px;
+    height: 24px;
     border: 2px solid #444;
     margin-bottom: 5px;
 }
