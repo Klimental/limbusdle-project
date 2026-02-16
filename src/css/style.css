@@ -1,6 +1,19 @@
+/**
+ * ========================================
+ * LIMBUSDLE - MAIN STYLESHEET
+ * ========================================
+ * Responsive design for Limbus Company puzzle game
+ * Color scheme: Dark theme with red/gold accents
+ * Breakpoints: Mobile-first responsive layout
+ */
+
+/* ==========================================
+   1. GLOBAL STYLES & LAYOUT
+   ========================================== */
+
 body {
-    background-color: #242424;
-    color: #ffffff;
+    background-color: #242424;    /* Dark background */
+    color: #ffffff;               /* White text */
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
@@ -14,24 +27,36 @@ body {
     padding-top: 40px;
 }
 
-h1 { color: #eca509; letter-spacing: 4px; }
+/* ==========================================
+   2. TYPOGRAPHY
+   ========================================== */
 
+h1 { 
+    color: #eca509;              /* Gold color - Limbus theme */
+    letter-spacing: 4px;         /* Wide letter spacing for impact */
+}
+
+/* ==========================================
+   3. SEARCH & AUTOCOMPLETE
+   ========================================== */
 
 .search-wrapper {
     position: relative;
     margin-bottom: 30px;
 }
 
+/* Search input field */
 #sinner-search {
     width: 100%;
     padding: 15px;
     background: #242424;
-    border: 2px solid #eca509;
+    border: 2px solid #eca509;   /* Gold border */
     color: white;
     font-size: 1.1rem;
     box-sizing: border-box;
 }
 
+/* Dropdown suggestions container */
 .dropdown {
     position: absolute;
     width: 100%;
@@ -43,6 +68,7 @@ h1 { color: #eca509; letter-spacing: 4px; }
     text-align: left;
 }
 
+/* Individual dropdown item */
 .dropdown-item {
     padding: 12px;
     cursor: pointer;
@@ -50,7 +76,14 @@ h1 { color: #eca509; letter-spacing: 4px; }
     transition: 0.2s;
 }
 
-.dropdown-item:hover { background: #b71c1c; color: white; }
+.dropdown-item:hover { 
+    background: #b71c1c;          /* Red highlight on hover */
+    color: white; 
+}
+
+/* ==========================================
+   4. TABLE STYLES
+   ========================================== */
 
 table {
     width: 100%;
@@ -58,14 +91,26 @@ table {
     margin-top: 20px;
 }
 
+
 th, td {
     padding: 12px 8px;
     border: 1px solid #333;
     font-size: 0.9rem;
 }
 
-.correct { background-color: #2e7d32; color: white; } /* Green match */
-.wrong { background-color: #c62828; color: white; }   /* Red mismatch */
+/* Feedback colors: Green = Correct, Red = Wrong */
+.correct { 
+    background-color: #2e7d32;    /* Green - Correct match */
+    color: white; 
+}
+.wrong { 
+    background-color: #c62828;    /* Red - Wrong/Mismatch */
+    color: white;   
+}
+
+/* ==========================================
+   5. IMAGE STYLES
+   ========================================== */
 
 .search-icon {
     width: 140px;
@@ -82,19 +127,23 @@ th, td {
     margin-bottom: 5px;
 }
 
-.dropdown-item {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-}
+/* ==========================================
+   6. ANIMATIONS
+   ========================================== */
 
 .fade-in {
     animation: fadeIn 0.5s ease-in-out;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from { 
+        opacity: 0; 
+        transform: translateY(-10px);
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0);
+    }
 }
 
 .modal {

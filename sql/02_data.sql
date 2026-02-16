@@ -1,3 +1,13 @@
+/**
+ * ========================================
+ * LIMBUSDLE - SEED DATA
+ * ========================================
+ * Populates the database with:
+ * - 12 main sinner characters
+ * - 150+ identities (personas) with varied skills and factions
+ */
+
+-- Insert the 12 main Limbus Company characters
 INSERT INTO sinners (name) VALUES 
 ('Yi Sang'), 
 ('Faust'), 
@@ -12,8 +22,24 @@ INSERT INTO sinners (name) VALUES
 ('Outis'), 
 ('Gregor');
 
+/**
+ * Insert identities (personas) for each sinner
+ * Each identity has:
+ * - Different faction/organization
+ * - Different skill combinations
+ * - Different rarity levels
+ * - Associated with a season/event
+ * 
+ * Skill Types:
+ * - Slash: Slashing attacks
+ * - Pierce: Piercing attacks
+ * - Blunt: Blunt force attacks
+ * - Guard: Defense mechanism
+ * - Evade: Evasion ability
+ * - Counter: Counter attack
+ */
 INSERT INTO identities (sinner_id, name, rarity, season, faction, skill1, skill2, skill3, defense, image_path) VALUES 
--- Yi Sang (1)--
+-- Yi Sang (sinner_id=1)--
 (1, 'LCB Sinner: Yi Sang', '0', 'Season 0', 'Limbus Company LCB', 'Slash', 'Pierce', 'Slash', 'Guard', 'img/yi_sang_base.png'),
 (1, 'Seven Assoc. South Section 6: Yi Sang', '00', 'Season 0', 'Seven Association', 'Pierce', 'Pierce', 'Blunt', 'Guard', 'img/yi_sang_seven.png'),
 (1, 'Blade Lineage Salsu: Yi Sang', '000', 'Season 0', 'Blade Lineage', 'Slash', 'Slash', 'Slash', 'Counter', 'img/yi_sang_blade.png'),
@@ -29,7 +55,7 @@ INSERT INTO identities (sinner_id, name, rarity, season, faction, skill1, skill2
 (1, 'N Corp. E.G.O::Fell Bullet: Yi Sang', '000', 'Season 6', 'N Corp.', 'Blunt', 'Pierce', 'Pierce', 'Clashable Counter', 'img/yi_sang_fell.png'),
 (1, 'Heishou Pack - Wu Branch Adept: Yi Sang', '000', 'Season 6', 'H Corp.', 'Slash', 'Slash', 'Slash', 'Clashable Guard', 'img/yi_sang_heishou.png'),
 
--- Faust (2)--
+-- Faust (sinner_id=2)--
 (2, 'LCB Sinner: Faust', '0', 'Season 0', 'Limbus Company LCB', 'Blunt', 'Blunt', 'Blunt', 'Evade', 'img/faust_base.png'),
 (2, 'W Corp. L2 Cleanup Agent: Faust', '00', 'Season 0', 'W Corp.', 'Blunt', 'Blunt', 'Blunt', 'Guard', 'img/faust_w.png'),
 (2, 'Lobotomy Corp. Remnant: Faust', '00', 'Season 1', 'Lobotomy Corp', 'Slash', 'Pierce', 'Slash', 'Evade', 'img/faust_remnant.png'),
@@ -45,9 +71,11 @@ INSERT INTO identities (sinner_id, name, rarity, season, faction, skill1, skill2
 (2, 'Shi Assoc. East Section 3: Faust', '000', 'Season 0', 'Shi Association', 'Slash', 'Slash', 'Pierce', 'Guard', 'img/faust_shi_east.png'),
 (2, 'LCE E.G.O::Ardor Blossom Star: Faust', '000', 'Season 5', 'Limbus Company LCE', 'Blunt', 'Blunt', 'Blunt', 'Evade', 'img/faust_ardor.png');
 
--- Don Quixote (3)--
+-- Don Quixote (sinner_id=3) --
+-- (Data continues for remaining sinners...)
 
--- Ryoshu (4) --
+-- Ryoshu (sinner_id=4) --
+-- (Data continues...)
 
 -- Meursault (5) --
 
